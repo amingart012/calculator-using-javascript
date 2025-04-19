@@ -74,13 +74,11 @@
         let display = document.forms[0].display;
         let current = display.value;
 
-        // Jangan izinkan operator pertama kalau belum ada angka
         if (current === "") return;
 
-        // Cegah dua operator berturut-turut
         let lastChar = current.slice(-1);
         if ("+-*/".includes(lastChar)) {
-            // Ganti operator terakhir dengan yang baru
+            
             display.value = current.slice(0, -1) + op;
         } else {
             display.value += op;
